@@ -352,7 +352,8 @@ class Controls:
       if not NOSENSOR:
         if not self.sm['liveLocationKalman'].gpsOK and (self.distance_traveled > 1000):
           # Not show in first 1 km to allow for driving out of garage. This event shows after 5 minutes
-          self.events.add(EventName.noGps)
+          ## dont care about gps, stop blocking my screen
+          # self.events.add(EventName.noGps)
       if not self.sm.all_alive(self.camera_packets):
         if TICI:
           self.events.add(EventName.cameraMalfunction)
